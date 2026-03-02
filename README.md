@@ -22,19 +22,26 @@
 
 ## Запуск с Docker
 
-1. Установи Docker Desktop
-2. Выполни:
+   1. Установи Docker Desktop
+   2. Выполни:
+   ```bash
+   docker-compose up -d
+   ```
+   3. Открой http://localhost:8080
+- System (Движок): PostgreSQL
+- Server (Сервер): db ← именно так называется сервис!
+- Username (Имя пользователя): `postgres`
+- Password (Пароль): `postgres` (если менял, то свой пароль)
+- Database (База данных): `car_catalog_db`
 
-```bash
-docker-compose up -d
+   4. Или подключись через VS Code (порт 5432)
 
-## Исследование
-
-Внутри контейнера выполнены команды:
-
-```sql
-SELECT color, AVG(price) FROM cars GROUP BY color;
-
+   ## Исследование
+   Внутри контейнера выполнены команды:
+   ```sql
+   SELECT color, AVG(price) FROM cars GROUP BY color;
+   ```
+   Вывод: car_catalog_db=# SELECT color, AVG(price) FROM cars GROUP BY color;
  color  |         avg
 --------+----------------------
  Red    | 1250000.000000000000 
@@ -44,11 +51,12 @@ SELECT color, AVG(price) FROM cars GROUP BY color;
  White  | 3300000.000000000000 
  Gray   | 1100000.000000000000 
 (6 rows)
-
-```sql
-SELECT brand, COUNT(*) FROM cars GROUP BY brand;
-
- brand    | count 
+   
+   ```sql
+   SELECT brand, COUNT(*) FROM cars GROUP BY brand;
+   ```
+   Вывод: car_catalog_db=# SELECT brand, COUNT(*) FROM cars GROUP BY brand;
+   brand    | count 
 ------------+-------
  Ford       |     1 
  Audi       |     1 
