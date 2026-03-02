@@ -27,3 +27,37 @@
 
 ```bash
 docker-compose up -d
+
+## Исследование
+
+Внутри контейнера выполнены команды:
+
+```sql
+SELECT color, AVG(price) FROM cars GROUP BY color;
+
+ color  |         avg
+--------+----------------------
+ Red    | 1250000.000000000000 
+ Black  | 4850000.250000000000 
+ Silver | 1275000.000000000000 
+ Blue   | 1525000.000000000000 
+ White  | 3300000.000000000000 
+ Gray   | 1100000.000000000000 
+(6 rows)
+
+```sql
+SELECT brand, COUNT(*) FROM cars GROUP BY brand;
+
+ brand    | count 
+------------+-------
+ Ford       |     1 
+ Audi       |     1 
+ Mercedes   |     1 
+ Lada       |     1 
+ Kia        |     1 
+ Toyota     |     1 
+ Nissan     |     1 
+ Hyundai    |     1 
+ BMW        |     1 
+ Volkswagen |     1 
+(10 rows)
