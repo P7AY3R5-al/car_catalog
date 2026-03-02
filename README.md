@@ -41,7 +41,8 @@
    ```sql
    SELECT color, AVG(price) FROM cars GROUP BY color;
    ```
-   Вывод: car_catalog_db=# SELECT color, AVG(price) FROM cars GROUP BY color;
+   Вывод:
+
  color  |         avg
 --------+----------------------
  Red    | 1250000.000000000000 
@@ -55,8 +56,8 @@
    ```sql
    SELECT brand, COUNT(*) FROM cars GROUP BY brand;
    ```
-   Вывод: car_catalog_db=# SELECT brand, COUNT(*) FROM cars GROUP BY brand;
-   brand    | count 
+   Вывод:
+ brand      | count 
 ------------+-------
  Ford       |     1 
  Audi       |     1 
